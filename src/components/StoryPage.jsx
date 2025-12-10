@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Story from "./Story";
+import "./StoryPage.css";
 
 export default function StoryPage() {
   const [name, setName] = useState(localStorage.getItem("Name"));
