@@ -36,6 +36,7 @@ doc.text("Your Name goes here!", 148.5, 108.5, { align: "center" });
 doc.save("TechEducators_Prevent_Certificate.pdf");
 
 export default function CertificateDownloadPage() {
+  let storedName = localStorage.getItem("");
   const [userName, setUserName] = useState("");
   return (
     <>
