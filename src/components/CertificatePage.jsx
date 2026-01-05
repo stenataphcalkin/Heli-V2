@@ -33,11 +33,15 @@ doc.addImage(
 const dateString = `${formattedDate}`;
 doc.text(dateString, 148.5, 128.5, { align: "center" });
 doc.text("Your Name goes here!", 148.5, 108.5, { align: "center" });
-doc.save("TechEducators_Prevent_Certificate.pdf");
+//doc.save("TechEducators_Prevent_Certificate.pdf");
 
 export default function CertificateDownloadPage() {
   let storedName = localStorage.getItem("");
   const [userName, setUserName] = useState("");
+  if (storedName && storedName != userName) {
+    setUserName(storedName);
+  }
+
   return (
     <>
       <h1>
