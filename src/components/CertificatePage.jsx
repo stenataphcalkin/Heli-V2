@@ -36,36 +36,82 @@ doc.text("Your Name goes here!", 148.5, 108.5, { align: "center" });
 //doc.save("TechEducators_Prevent_Certificate.pdf");
 
 export default function CertificateDownloadPage() {
-  let storedName = localStorage.getItem("");
+  let storedName = localStorage.getItem("Name");
   const [userName, setUserName] = useState("");
   if (storedName && storedName != userName) {
     setUserName(storedName);
   }
 
+  const downloadCertificate = () => {
+    const doc = new jsPDF({
+      orientation: "landscape",
+    });
+
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString("en-GB", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    const imageFormat = "PNG";
+    const xPosition = 0;
+    const yPosition = 0;
+    const imageWidth = 297;
+    const imageHeight = 210;
+
+    doc.addImage(
+      CERT_BASE64_STRING,
+      imageFormat,
+      xPosition,
+      yPosition,
+      imageWidth,
+      imageHeight
+    );
+
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(255, 255, 255);
+
+    const studentName = userName.toUpperCase();
+
+    const dateString = formattedDate.toUpperCase();
+    doc.setFontSize(24);
+    doc.text(dateString, 28.5, 173.5, { align: "left" });
+
+    const nameLength = studentName.length;
+    let fontSize;
+
+    if (nameLength <= 15) {
+      fontSize = 48;
+    } else if (nameLength <= 25) {
+      fontSize = 30;
+    } else if (nameLength <= 35) {
+      fontSize = 24;
+    } else if (nameLength <= 45) {
+      fontSize = 20;
+    } else {
+      fontSize = 10;
+    }
+
+    doc.setFontSize(fontSize);
+
+    const maxWidth = 220;
+    const lines = doc.splitTextToSize(studentName, maxWidth);
+
+    doc.text(lines, 148.5, 103.5, {
+      align: "center",
+      lineHeightFactor: 1.15,
+    });
+
+    doc.save("Heli_Prevent_Certificate.pdf");
+  };
+
   return (
     <>
       <h1>
-        🎉 Congratulations on passing this Tech Educators PREVENT training
-        module 🎉
+        🎉 Congratulations on passing this HELI PREVENT training module 🎉
       </h1>
-      <p> Please enter your name below to download your certificate!</p>
-      <div className="name-input-field">
-        <label htmlFor="name-input">Your Name:</label>
-        <input
-          id="name-input"
-          type="text"
-          value={userName}
-          placeholder="e.g. Ogilvie Maurice"
-          onChange={(event) => setUserName(event.target.value)}
-        />
-      </div>
-      {/* Need to resolve JSPDF template and input to handle the following */}
-      <button
-        // !!onClick={downloadCertificate}>
-        disabled={!userName.trim()}
-      >
-        Download your certificate!
-      </button>
+      <button onClick={downloadCertificate}>Download your certificate!</button>
     </>
   );
 }
