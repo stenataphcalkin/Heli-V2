@@ -103,7 +103,7 @@ h2 {
   left: 0;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #aa1ecd;
+  background-color: none;
 }
 
 @media screen and (max-width: 980px) {
@@ -121,7 +121,6 @@ h2 {
   padding-top: 4em;
   background: var(--background);
   height: 80vh;
-  overflow-y: scroll;
 }
 
 .switched .container {

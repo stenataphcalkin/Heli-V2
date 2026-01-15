@@ -17,8 +17,8 @@ export default function Story() {
   useScript("/ink-files/ink.js");
   useScript("/ink-files/main.js");
   return (
-    <>
-      <div id="controls" className="buttons">
+    <div className="outerContainer">
+      <section id="controls" className="buttons">
         <button id="rewind" title="Restart story from beginning">
           restart
         </button>
@@ -28,8 +28,8 @@ export default function Story() {
         <button id="reload" title="Reload from save point">
           load
         </button>
-      </div>
-      <div id="story" className="container"></div>
-    </>
+      </section>
+      <section id="story" className="container"></section>
+    </div>
   );
 }
