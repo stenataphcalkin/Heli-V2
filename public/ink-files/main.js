@@ -237,7 +237,6 @@ import { storyContent } from "./firstDraft.js";
             JSON.parse(savePoint).flows.DEFAULT_FLOW.callstack.threadCounter;
           var StoryPercentage =
             (100 * StoryProgress) / ArrayOfStoryPoints.length;
-          console.log(StoryPercentage);
 
           continueStory();
         });
