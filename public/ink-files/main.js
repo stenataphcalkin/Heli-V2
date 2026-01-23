@@ -4,7 +4,7 @@ import { storyContent } from "./firstDraft.js";
   var story = new inkjs.Story(storyContent);
 
   var savePoint = "";
-
+  var StoryProgress = 0;
   let savedTheme;
   let globalTagTheme;
 
@@ -49,6 +49,8 @@ import { storyContent } from "./firstDraft.js";
   // Main story processing function. Each time this is called it generates
   // all the next content up as far as the next set of choices.
   function continueStory(firstTime) {
+    //var ListOfStoryPoints = Object.keys(storyContent.root[2].length);
+
     var paragraphIndex = 0;
     var delay = 0.0;
 
@@ -232,6 +234,15 @@ import { storyContent } from "./firstDraft.js";
           savePoint = story.state.toJson();
 
           // Aaand loop
+          var StoryProgressDetector = 0;
+          var StoryNotProgressing =
+            JSON.parse(savePoint).flows.DEFAULT_FLOW.callstack.threadCounter ===
+            StoryProgressDetector;
+          if (!StoryNotProgressing) {
+            StoryProgress++;
+          }
+          console.log(JSON.parse(savePoint), StoryProgress);
+
           continueStory();
         });
       }
