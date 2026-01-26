@@ -92,7 +92,17 @@ h2 {
 /* 
   Enables <iframe> support work on itch.io when using mobile iOS
 */
+.progressBarOuter {
+  width: 100px;
+  height: 20px;
+  background-color: white;
 
+  margin-inline: auto;
+}
+.ProgressBar {
+  background-color: green;
+  height: 20px;
+}
 
 
 

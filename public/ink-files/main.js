@@ -5,9 +5,6 @@ import { storyContent } from "./firstDraft.js";
 
   var savePoint = "";
 
-  // let savedTheme;
-  // let globalTagTheme;
-
   // Global tags - those at the top of the ink file
   // We support:
   //  # theme: dark
@@ -49,6 +46,29 @@ import { storyContent } from "./firstDraft.js";
   // Main story processing function. Each time this is called it generates
   // all the next content up as far as the next set of choices.
   function continueStory(firstTime) {
+    var ArrayOfStoryPoints = Object.keys(storyContent.root[2]);
+    var StoryProgress =
+      JSON.parse(savePoint).flows.DEFAULT_FLOW.callstack.threadCounter;
+    var StoryPercentage = (100 * StoryProgress) / ArrayOfStoryPoints.length;
+    var buttonContainer = document.querySelector(".buttons");
+
+    var ProgressBarContainer = document.querySelector(".progressBarContainer");
+    ProgressBarContainer.style.position = "absolute";
+    ProgressBarContainer.style.width = "100%";
+    console.log(buttonContainer.style.height);
+    ProgressBarContainer.style.top = `50px`;
+    var OldProgressBarContainer = document.querySelector(".progressBarOuter");
+    if (OldProgressBarContainer) {
+      ProgressBarContainer.removeChild(OldProgressBarContainer);
+    }
+    var ProgressBarOuter = document.createElement("div");
+    ProgressBarOuter.className = "progressBarOuter";
+    var ProgressBar = document.createElement("div");
+    ProgressBar.className = "ProgressBar";
+    ProgressBar.style.width = `${StoryPercentage}%`;
+    ProgressBarContainer.appendChild(ProgressBarOuter);
+    ProgressBarOuter.appendChild(ProgressBar);
+
     var paragraphIndex = 0;
     var delay = 0.0;
 
@@ -231,6 +251,7 @@ import { storyContent } from "./firstDraft.js";
           savePoint = story.state.toJson();
 
           // Aaand loop
+
           continueStory();
         });
       }
