@@ -4,9 +4,6 @@ import { storyContent } from "./firstDraft.js";
   var story = new inkjs.Story(storyContent);
 
   var savePoint = "";
-  //var StoryProgress = 0;
-  let savedTheme;
-  let globalTagTheme;
 
   // Global tags - those at the top of the ink file
   // We support:
