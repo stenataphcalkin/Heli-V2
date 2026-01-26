@@ -1,0 +1,281 @@
+/* 
+  Dark Theme (Added in Inky 0.10.0)
+    # theme: dark
+*/
+
+/* body.dark {
+  background: black;
+  color: white;
+}
+
+.dark h2 {
+  color: #666;
+}
+
+.dark .container {
+  background: black;
+}
+
+.dark .written-in-ink {
+  background: black;
+}
+
+.dark .choice {
+  color: #cc8f1a;
+  transition: color 0.6s;
+}
+
+.dark a:hover {
+  color: white;
+}
+
+.dark strong {
+  color: white;
+}
+
+.dark #controls [disabled] {
+  color: #444;
+}
+
+.dark .end {
+  color: white;
+}
+
+.dark #controls {
+  background: black;
+} */
+
+/*custom stuff*/
+
+
+
+
+body.switched {
+  transition: color 0.6s, background-color 0.6s;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-family: "Quattrocento", Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 30pt;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 14pt;
+  font-style: italic;
+  font-family: sans-serif;
+  font-weight: lighter;
+  color: var(--foreground);
+}
+
+.header {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+/*
+  Built-in class:
+    # author: Name
+*/
+.byline {
+  font-style: italic;
+}
+
+
+/* 
+  Enables <iframe> support work on itch.io when using mobile iOS
+*/
+
+
+
+
+
+.switched .container {
+  transition: background-color 0.6s;
+}
+
+p {
+  font-size: 13pt;
+  /* color: var(--foreground); */
+  line-height: 1.7em;
+  font-weight: lighter;
+}
+
+
+
+.choice:hover {
+  color: #fbd320;
+  transition: color 0.1s;
+}
+
+strong {
+  /* color: var(--foreground); */
+  font-weight: bold;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.container .hide {
+  opacity: 0;
+}
+
+.container .invisible {
+  display: none;
+}
+
+.container > * {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+/*
+  Class applied to all choices
+  (Will always appear inside <p> element by default.)
+*/
+.choice {
+  text-align: center;
+  line-height: 1.7em;
+}
+
+/* 
+  Class applied to first choice
+*/
+:not(.choice) + .choice {
+  padding-top: 1em;
+}
+
+/*
+  Class applied to choice links
+*/
+.choice a {
+  font-size: 15pt;
+}
+
+/* 
+  Built-in class:
+    The End # CLASS: end
+*/
+.end {
+  text-align: center;
+  font-weight: bold;
+  color: var(--foreground);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#controls {
+  z-index: 4;
+  font-size: 9pt;
+  text-align: center;
+  padding-bottom: 6px;
+  position: fixed;
+  left: 14px;
+  top: 4px;
+  user-select: none;
+  /* background: var(--background); */
+  transition: color 0.6s, background 0.6s;
+}
+
+#controls [disabled] {
+  color: #ccc;
+}
+
+#controls > *:not(:last-child):after {
+  content: " | ";
+}
+
+@media screen and (max-width: 980px) {
+  #controls {
+    z-index: 2;
+    padding-top: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+/* #word-storage {
+  width: 20vw;
+  overflow-y: scroll;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+} */
+
+.pageContainer {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 250px);
+  margin-bottom: 50px;
+}
+.storySection {
+  width: 80%;
+}
+@media screen and (max-width: 1000px) {
+  .outerContainer {
+    width: 100%;
+  }
+  .pageContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* #word-storage {
+    width: calc(100vw - 20px);
+    overflow-y: scroll;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+  } */
+
+  p {
+    font-size: 1rem;
+  }
+
+  .storedWord {
+    text-wrap: nowrap;
+  }
+  #controls {
+    width: 100%;
+  }
+  .storySection {
+    width: 100%;
+  }
+}
+header {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  #word-storage {
+    font-size: 0.7rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+  .outerContainer {
+    margin-top: 0;
+  }
+  .container {
+    padding-top: 20px;
+  }
+  .header {
+    padding: 0px;
+  }
+}
+
