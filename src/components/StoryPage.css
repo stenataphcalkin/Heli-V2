@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700");
 
 :root {
@@ -58,6 +59,8 @@ body {
     background-repeat: no-repeat;
   }
 }
+=======
+>>>>>>> b1c41b7de6e04b69354563b9ec4b5228e6c2d034
 .progressBarOuter {
   width: 100px;
   height: 20px;
@@ -68,4 +71,8 @@ body {
 .ProgressBar {
   background-color: green;
   height: 20px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b1c41b7de6e04b69354563b9ec4b5228e6c2d034
