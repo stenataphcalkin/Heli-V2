@@ -6,10 +6,9 @@ export default function StoryPage() {
   const [name, setName] = useState(localStorage.getItem("Name"));
 
   function handleSaveName(formData) {
-    const inputName = formData.get("Name");
-    if (!name && inputName) {
-      localStorage.setItem("Name", inputName);
-      setName(inputName);
+    if (!name) {
+      localStorage.setItem("Name", formData.get("Name"));
+      setName(formData.get("Name"));
     }
   }
 
