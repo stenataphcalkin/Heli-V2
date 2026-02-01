@@ -90,25 +90,11 @@ a:hover {
     display: flex;
     flex-direction: column;
   }
-  #word-storage {
-    width: calc(100vw - 20px);
-    overflow-y: scroll;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 10px;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 0;
-  }
+
   p {
     font-size: 1rem;
   }
 
-  .storedWord {
-    text-wrap: nowrap;
-  }
   #controls {
     width: 100%;
   }
@@ -118,21 +104,4 @@ a:hover {
 }
 header {
   display: none;
-}
-@media screen and (max-width: 600px) {
-  #word-storage {
-    font-size: 0.7rem;
-  }
-  p {
-    font-size: 0.7rem;
-  }
-  .outerContainer {
-    margin-top: 0;
-  }
-  .container {
-    padding-top: 20px;
-  }
-  .header {
-    padding: 0px;
-  }
 }
