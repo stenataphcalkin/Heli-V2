@@ -561,7 +561,7 @@ export var storyContent = {
             { "*": ".^.^.c-0", flg: 18 },
             {
               s: [
-                "^Reach out to Prevent (part of the National counter-radicalisation strategy) for advice or a safe confidential discussion. ",
+                "^Reach out to Prevent (part of the National counter-radicalisaition strategy) for advice or a safe confidential discussion. ",
                 { "->": "$r", var: true },
                 null,
               ],
