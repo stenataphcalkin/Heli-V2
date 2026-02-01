@@ -29,7 +29,7 @@ export default function Story() {
           load
         </button>
       </section>
-      <section id="progressBar" className="progressBarContainer"></section>
+
       <section id="story" className="container"></section>
     </div>
   );

@@ -5,9 +5,6 @@ import CertificatePage from "./components/CertificatePage";
 function App() {
   return (
     <>
-      <nav>
-        <Link to="/">Story</Link>
-      </nav>
       <Routes>
         <Route path="/" element={<StoryPage />} />
         <Route path="/certificate" element={<CertificatePage />} />
