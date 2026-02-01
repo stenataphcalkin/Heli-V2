@@ -27,7 +27,7 @@ doc.addImage(
   xPosition,
   yPosition,
   imageWidth,
-  imageHeight
+  imageHeight,
 );
 
 const dateString = `${formattedDate}`;
@@ -35,7 +35,7 @@ doc.text(dateString, 148.5, 128.5, { align: "center" });
 doc.text("Your Name goes here!", 148.5, 108.5, { align: "center" });
 
 export default function CertificateDownloadPage() {
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(localStorage.getItem("Name") || "");
 
   const downloadCertificate = () => {
     const doc = new jsPDF({
@@ -59,7 +59,7 @@ export default function CertificateDownloadPage() {
       0,
       0,
       imageWidth,
-      imageHeight
+      imageHeight,
     );
 
     doc.setFont("helvetica", "bold");
@@ -97,24 +97,26 @@ export default function CertificateDownloadPage() {
           🎉 CONGRATULATIONS ON PASSING THIS HELI PREVENT AWARENESS MODULE 🎉
         </h1>
 
-        <div style={styles.inputGroup}>
-          <label htmlFor="name-input" style={styles.label}>
-            Please enter your name below to download your certificate!
-          </label>
-          <input
-            id="name-input"
-            type="text"
-            style={styles.input}
-            value={userName}
-            placeholder="e.g. Ogilvie Maurice"
-            onChange={(event) => setUserName(event.target.value)}
-          />
-        </div>
+        {
+          <div style={styles.inputGroup}>
+            <label htmlFor="name-input" style={styles.label}>
+              Please enter your name below to download your certificate!
+            </label>
+            <input
+              id="name-input"
+              type="text"
+              style={styles.input}
+              value={userName}
+              placeholder="e.g. Ogilvie Maurice"
+              onChange={(event) => setUserName(event.target.value)}
+            />
+          </div>
+        }
 
         <button
           onClick={downloadCertificate}
           disabled={!userName.trim()}
-          style={userName.trim() ? styles.button : styles.buttonDisabled}
+          style={!userName.trim() ? styles.buttonDisabled : styles.button}
         >
           Download your certificate!
         </button>
