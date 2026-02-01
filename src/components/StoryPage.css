@@ -69,6 +69,28 @@ a:hover {
   color: #fbd320;
   transition: color 0.1s;
 }
+.progressBar {
+  width: 100px;
+  height: 30px;
+}
+#rewind,
+#save,
+#reload {
+  text-align: center;
+  line-height: 1.7em;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  width: 100px;
+}
+
+#rewind:hover,
+#save:hover,
+#reload:hover {
+  background-color: #fbd320;
+  color: black;
+  transition: color 0.1s;
+}
 .buttons {
   width: 980px;
   display: flex;
