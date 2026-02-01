@@ -126,3 +126,52 @@ a:hover {
 header {
   display: none;
 }
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: 100vh;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.name-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.name-form label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  color: purple;
+  font-weight: 700;
+}
+
+.name-form input {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: 2px solid purple;
+  border-radius: 8px;
+  background: white;
+  color: purple;
+  width: 250px;
+}
+
+.name-form button {
+  padding: 10px 30px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.name-form button:hover {
+  background-color: #fbd320;
+  color: black;
+}
