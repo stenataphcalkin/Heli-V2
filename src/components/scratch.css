@@ -47,11 +47,10 @@
 
 /*custom stuff*/
 
-
-
-
 body.switched {
-  transition: color 0.6s, background-color 0.6s;
+  transition:
+    color 0.6s,
+    background-color 0.6s;
 }
 
 h1,
@@ -88,7 +87,6 @@ h2 {
   font-style: italic;
 }
 
-
 /* 
   Enables <iframe> support work on itch.io when using mobile iOS
 */
@@ -104,9 +102,6 @@ h2 {
   height: 20px;
 }
 
-
-
-
 .switched .container {
   transition: background-color 0.6s;
 }
@@ -116,13 +111,6 @@ p {
   /* color: var(--foreground); */
   line-height: 1.7em;
   font-weight: lighter;
-}
-
-
-
-.choice:hover {
-  color: #fbd320;
-  transition: color 0.1s;
 }
 
 strong {
@@ -153,10 +141,6 @@ img {
   Class applied to all choices
   (Will always appear inside <p> element by default.)
 */
-.choice {
-  text-align: center;
-  line-height: 1.7em;
-}
 
 /* 
   Class applied to first choice
@@ -194,7 +178,9 @@ img {
   top: 4px;
   user-select: none;
   /* background: var(--background); */
-  transition: color 0.6s, background 0.6s;
+  transition:
+    color 0.6s,
+    background 0.6s;
 }
 
 #controls [disabled] {
@@ -288,4 +274,3 @@ header {
     padding: 0px;
   }
 }
-

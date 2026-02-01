@@ -27,10 +27,17 @@ body {
   flex-direction: column;
 }
 
+p {
+  font-weight: bold;
+  word-spacing: 5px;
+  line-height: 1.8;
+  color: purple;
+}
+
 .outerContainer {
   margin: 0;
   padding: 0;
-  /* -webkit-overflow-scrolling: touch; */
+  /* -webkit-overflow-scrolling: touch; Not doing anything when webpage inspected */
   overflow: scroll;
   overflow-x: hidden;
   height: 100%;
@@ -39,7 +46,7 @@ body {
   left: 0;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: none;
+  /* background-color: none; Not doing anything when webpage inspected */
 }
 
 .container {
@@ -52,21 +59,68 @@ body {
   height: 80vh;
 }
 
+a {
+  text-align: center;
+  line-height: 1.7em;
+  color: blue;
+}
+
+a:hover {
+  color: #fbd320;
+  transition: color 0.1s;
+}
+
 @media screen and (max-width: 980px) {
   .outerContainer {
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 100%;
+  }
+  .pageContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  #word-storage {
+    width: calc(100vw - 20px);
+    overflow-y: scroll;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+  }
+  p {
+    font-size: 1rem;
+  }
+
+  .storedWord {
+    text-wrap: nowrap;
+  }
+  #controls {
+    width: 100%;
+  }
+  .storySection {
+    width: 100%;
   }
 }
-
-.progressBarOuter {
-  width: 100px;
-  height: 20px;
-  background-color: white;
-
-  margin-inline: auto;
+header {
+  display: none;
 }
-.ProgressBar {
-  background-color: green;
-  height: 20px;
+@media screen and (max-width: 600px) {
+  #word-storage {
+    font-size: 0.7rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+  .outerContainer {
+    margin-top: 0;
+  }
+  .container {
+    padding-top: 20px;
+  }
+  .header {
+    padding: 0px;
+  }
 }
