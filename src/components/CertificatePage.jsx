@@ -33,7 +33,6 @@ doc.addImage(
 const dateString = `${formattedDate}`;
 doc.text(dateString, 148.5, 128.5, { align: "center" });
 doc.text("Your Name goes here!", 148.5, 108.5, { align: "center" });
-//doc.save("TechEducators_Prevent_Certificate.pdf");
 
 export default function CertificateDownloadPage() {
   const [userName, setUserName] = useState("");
@@ -51,16 +50,14 @@ export default function CertificateDownloadPage() {
     });
 
     const imageFormat = "PNG";
-    const xPosition = 0;
-    const yPosition = 0;
     const imageWidth = 297;
     const imageHeight = 210;
 
     doc.addImage(
       CERT_BASE64_STRING,
       imageFormat,
-      xPosition,
-      yPosition,
+      0,
+      0,
       imageWidth,
       imageHeight
     );
@@ -68,29 +65,20 @@ export default function CertificateDownloadPage() {
     doc.setFont("helvetica", "bold");
     doc.setTextColor(255, 255, 255);
 
-    const studentName = userName.toUpperCase();
-
     const dateString = formattedDate.toUpperCase();
     doc.setFontSize(24);
     doc.text(dateString, 28.5, 173.5, { align: "left" });
 
+    const studentName = userName.toUpperCase();
     const nameLength = studentName.length;
-    let fontSize;
+    let fontSize = 10;
 
-    if (nameLength <= 15) {
-      fontSize = 48;
-    } else if (nameLength <= 25) {
-      fontSize = 30;
-    } else if (nameLength <= 35) {
-      fontSize = 24;
-    } else if (nameLength <= 45) {
-      fontSize = 20;
-    } else {
-      fontSize = 10;
-    }
+    if (nameLength <= 15) fontSize = 48;
+    else if (nameLength <= 25) fontSize = 30;
+    else if (nameLength <= 35) fontSize = 24;
+    else if (nameLength <= 45) fontSize = 20;
 
     doc.setFontSize(fontSize);
-
     const maxWidth = 220;
     const lines = doc.splitTextToSize(studentName, maxWidth);
 
@@ -103,24 +91,99 @@ export default function CertificateDownloadPage() {
   };
 
   return (
-    <>
-      <h1>
-        🎉 Congratulations on passing this HELI PREVENT training module 🎉
-      </h1>
-      <p>Please enter your name below to download your certificate!</p>
-      <div className="name-input-field">
-        <label htmlFor="name-input">Your Name:</label>
-        <input
-          id="name-input"
-          type="text"
-          value={userName}
-          placeholder="e.g. Ogilvie Maurice"
-          onChange={(event) => setUserName(event.target.value)}
-        />
+    <div style={styles.container}>
+      <div style={styles.contentCard}>
+        <h1 style={styles.heading}>
+          🎉 CONGRATULATIONS ON PASSING THIS HELI PREVENT AWARENESS MODULE 🎉
+        </h1>
+
+        <div style={styles.inputGroup}>
+          <label htmlFor="name-input" style={styles.label}>
+            Please enter your name below to download your certificate!
+          </label>
+          <input
+            id="name-input"
+            type="text"
+            style={styles.input}
+            value={userName}
+            placeholder="e.g. Ogilvie Maurice"
+            onChange={(event) => setUserName(event.target.value)}
+          />
+        </div>
+
+        <button
+          onClick={downloadCertificate}
+          disabled={!userName.trim()}
+          style={userName.trim() ? styles.button : styles.buttonDisabled}
+        >
+          Download your certificate!
+        </button>
       </div>
-      <button onClick={downloadCertificate} disabled={!userName.trim()}>
-        Download your certificate!
-      </button>
-    </>
+    </div>
   );
 }
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "top",
+    minHeight: "100vh",
+    padding: "20px",
+    textAlign: "center",
+    fontFamily: "Open Sans",
+    color: "purple",
+  },
+  contentCard: {
+    maxWidth: "600px",
+    padding: "40px",
+    borderRadius: "12px",
+  },
+  heading: {
+    fontSize: "1.8rem",
+    marginBottom: "1rem",
+    color: "purple",
+  },
+  subtext: {
+    color: "purple",
+    marginBottom: "2rem",
+  },
+  inputGroup: {
+    marginBottom: "1.5rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  label: {
+    marginBottom: "8px",
+    fontWeight: "bold",
+  },
+  input: {
+    padding: "12px",
+    fontSize: "1rem",
+    width: "100%",
+    maxWidth: "300px",
+    borderRadius: "6px",
+    border: "2px solid purple",
+  },
+  button: {
+    padding: "12px 24px",
+    fontSize: "1.1rem",
+    backgroundColor: "orange",
+    color: "white",
+    border: "none",
+    borderRadius: "6px",
+    cursor: "pointer",
+    transition: "background 0.3s",
+  },
+  buttonDisabled: {
+    padding: "12px 24px",
+    fontSize: "1.1rem",
+    backgroundColor: "lightgrey",
+    color: "grey",
+    border: "none",
+    borderRadius: "6px",
+    cursor: "not-allowed",
+  },
+};
