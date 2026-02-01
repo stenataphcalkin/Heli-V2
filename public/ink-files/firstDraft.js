@@ -46,7 +46,7 @@ export var storyContent = {
             { "*": ".^.^.c-1", flg: 18 },
             {
               s: [
-                "^\"We haven't spoke for a while, are you sure I'm the right person to speak to?\"",
+                '^"We haven\'t spoke for a while, are you sure I am the right person to speak to?"',
                 { "->": "$r", var: true },
                 null,
               ],
@@ -113,7 +113,7 @@ export var storyContent = {
           "\n",
           '^"Hey man, long time no see!"',
           "\n",
-          '^"Oh, hi. Wasn\'t expecting you." Scowls Lazlo. You laugh off the tension.',
+          '^"Oh, hi. I wasn\'t expecting you." Scowls Lazlo. You laugh off the tension.',
           "\n",
           '^"Thought I would swing by so we could catch up. It\'s been too long."',
           "\n",
@@ -184,7 +184,7 @@ export var storyContent = {
         { "#f": 1 },
       ],
       chat: [
-        "^You enter, and the news blaring in the background about threats to national security. Lazlo mutes the tv. Your eyes stray to the posters and newspaper articles on the wall.",
+        "^You enter, and the news is blaring in the background about threats to national security. Lazlo mutes the tv. Your eyes stray to the posters and newspaper articles on the wall.",
         "\n",
         '^"Do you want a drink?" Asks Lazlo, frowning and unsure of what to do with himself.',
         "\n",
@@ -235,7 +235,7 @@ export var storyContent = {
               [{ "#n": "$r2" }],
               "^ ",
               "\n",
-              "^You notice the newspaper articles on the coffee table, and  what looks like new religious paraphernalia in the corner.",
+              "^You notice the newspaper articles on the coffee table, and  what looks like new religious paraphernalia in the corner of the room.",
               "\n",
               { "->": "work" },
               { "#f": 5 },
@@ -248,7 +248,7 @@ export var storyContent = {
               { "->": ".^.^.1.s" },
               [{ "#n": "$r2" }],
               "\n",
-              "^[You ask for coffee to stall time and investigate the posters on the wall you know are the calling symbols of extremist groups.]",
+              "^[You ask for coffee to stall time and investigate the posters on the wall, which you know are the calling symbols of extremist groups.]",
               "\n",
               "^You also notice newspaper articles strewn across the coffee table that follow extremist rallies and protests.",
               "\n",
@@ -317,7 +317,7 @@ export var storyContent = {
               { "->": ".^.^.0.s" },
               [{ "#n": "$r2" }],
               "\n",
-              "^\"Don't go anymore.\" Replies Lazlo. \"I've started praying with some new guys and they are so inclusive and welcoming. They made me see that my old church wasn't a good place for growth. I've found new purpose in this church\"",
+              "^\"I don't go anymore.\" Replies Lazlo. \"I've started praying with some new guys and they are so inclusive and welcoming. They made me see that my old church wasn't a good place for growth. I've found new purpose in this church\"",
               "\n",
               { "->": "bonding" },
               "done",
@@ -399,7 +399,7 @@ export var storyContent = {
       ],
       investigate: [
         [
-          "^Lazlo's phone sits on the coffee table, and keeps vibrating. You notice its for group meetups for a group of the same name as those in the newspaper articles with the same symbol as the post on the wall. Lazlo sees you looking, and snatches his phone back.",
+          "^Lazlo's phone sits on the coffee table, and keeps vibrating. You notice it is notifications for meetups for a group of the same name as those in the newspaper articles with the same symbol as the post on the wall. Lazlo sees you looking, and snatches his phone back.",
           "\n",
           [
             "ev",
@@ -428,7 +428,7 @@ export var storyContent = {
               { "->": ".^.^.2.s" },
               [{ "#n": "$r2" }],
               "\n",
-              '^"It\'s just this group I joined just by chance and one of the guys reached out and has been really supportive. He took me under his wing and the community made me feel so welcome. Their church really gives you purpose."',
+              '^"It\'s just this group I joined by chance and one of the guys reached out. He has been really supportive. He took me under his wing and the community made me feel so welcome. Their church really gives you purpose."',
               "\n",
               { "->": "SUPPORT" },
               "done",
@@ -461,7 +461,7 @@ export var storyContent = {
               { "->": ".^.^.0.s" },
               [{ "#n": "$r2" }],
               "\n",
-              "^\"They just don't understand me anymore. It's like now that Uncle Joey is gone, and I've lost my job, I don't have anything to show them. Everything with them is about image and reputation. Now I'm just the failure.\"",
+              "^\"They just don't understand me anymore. It's like now that Uncle Joey is gone, and I've lost my job, I am not as valuable to them. Everything with them is about image and reputation. Now I'm just the failure.\"",
               "\n",
               "^\"That sucks. You know I'm always here for you mate. If you ever need a friend, I'm here.\"",
               "\n",
@@ -475,7 +475,7 @@ export var storyContent = {
       ],
       SUPPORT: [
         [
-          "^Thinking over everything you know, have learnt and what Lazlo has said, and the text you've highlighted, what do you do next?",
+          "^Thinking over everything you know, have learnt and what Lazlo has said, what do you do next?",
           "\n",
           [
             "ev",
@@ -489,7 +489,7 @@ export var storyContent = {
             { "*": ".^.^.c-0", flg: 18 },
             {
               s: [
-                "^Keep communication open and non-judgemental - because you know isolation can expedite radicalisation worse?",
+                "^Keep communication open and non-judgemental - because you know isolation can expedite radicalisation?",
                 { "->": "$r", var: true },
                 null,
               ],
@@ -561,7 +561,7 @@ export var storyContent = {
             { "*": ".^.^.c-0", flg: 18 },
             {
               s: [
-                "^Reach out to Prevent (part of the antional counter-radicalisaition strategy) for advice or a safe confidential discussion. ",
+                "^Reach out to Prevent (part of the National counter-radicalisaition strategy) for advice or a safe confidential discussion. ",
                 { "->": "$r", var: true },
                 null,
               ],
@@ -576,7 +576,7 @@ export var storyContent = {
               { "->": ".^.^.0.s" },
               [{ "#n": "$r2" }],
               "\n",
-              "^For more inforation on where to find help and support, check out our resources page.",
+              // "^For more inforation on where to find help and support, check out our resources page.",
               "\n",
               "^The End.",
               "\n",
