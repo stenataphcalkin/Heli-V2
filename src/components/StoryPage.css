@@ -32,10 +32,11 @@ p {
   word-spacing: 5px;
   line-height: 1.8;
   color: purple;
+  font-size: 1.3rem;
 }
 
 .outerContainer {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   /* -webkit-overflow-scrolling: touch; Not doing anything when webpage inspected */
   overflow: scroll;
