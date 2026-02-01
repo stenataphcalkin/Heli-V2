@@ -50,24 +50,17 @@ import { storyContent } from "./firstDraft.js";
     var StoryProgress =
       JSON.parse(savePoint).flows.DEFAULT_FLOW.callstack.threadCounter;
     var StoryPercentage = (100 * StoryProgress) / ArrayOfStoryPoints.length;
-    var buttonContainer = document.querySelector(".buttons");
-
-    var ProgressBarContainer = document.querySelector(".progressBarContainer");
-    ProgressBarContainer.style.position = "absolute";
-    ProgressBarContainer.style.width = "100%";
-    console.log(buttonContainer.style.height);
-    ProgressBarContainer.style.top = `50px`;
-    var OldProgressBarContainer = document.querySelector(".progressBarOuter");
+    var ProgressBarContainer = document.querySelector(".buttons");
+    var OldProgressBarContainer = document.querySelector(".progressBar");
     if (OldProgressBarContainer) {
       ProgressBarContainer.removeChild(OldProgressBarContainer);
     }
-    var ProgressBarOuter = document.createElement("div");
-    ProgressBarOuter.className = "progressBarOuter";
-    var ProgressBar = document.createElement("div");
-    ProgressBar.className = "ProgressBar";
-    ProgressBar.style.width = `${StoryPercentage}%`;
-    ProgressBarContainer.appendChild(ProgressBarOuter);
-    ProgressBarOuter.appendChild(ProgressBar);
+    var ProgressBar = document.createElement("progress");
+    ProgressBar.className = "progressBar";
+    ProgressBar.max = "100";
+    ProgressBar.value = `${StoryPercentage}`;
+    ProgressBar.title = "Progress Bar";
+    ProgressBarContainer.appendChild(ProgressBar);
 
     var paragraphIndex = 0;
     var delay = 0.0;

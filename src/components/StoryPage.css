@@ -69,21 +69,20 @@ a:hover {
   color: #fbd320;
   transition: color 0.1s;
 }
-
-.progressBarOuter {
-  width: 100px;
-  height: 20px;
-  background-color: white;
-
-  margin-inline: auto;
-}
-.ProgressBar {
-  background-color: green;
-  height: 20px;
+.buttons {
+  width: 980px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media screen and (max-width: 980px) {
   .outerContainer {
+    width: 100%;
+  }
+  .buttons {
     width: 100%;
   }
   .pageContainer {
