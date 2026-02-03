@@ -69,12 +69,14 @@ import { storyContent } from "./firstDraft.js";
     var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
 
     // Generate story text - loop through available content
+    var currentSender = null;
     while (story.canContinue) {
       // Get ink to generate the next paragraph
       var paragraphText = story.Continue();
       var tags = story.currentTags;
       // Any special tags included with this line
       var customClasses = [];
+      var isSenderMessage = false;
       for (var i = 0; i < tags.length; i++) {
         var tag = tags[i];
 
@@ -82,6 +84,12 @@ import { storyContent } from "./firstDraft.js";
         // customised to be used for other things too.
         var splitTag = splitPropertyTag(tag);
         splitTag.property = splitTag.property.toUpperCase();
+
+        // SENDER: name - for text message conversations
+        if (splitTag && splitTag.property == "SENDER") {
+          currentSender = splitTag.val;
+          isSenderMessage = true;
+        }
 
         // AUDIO: src
         if (splitTag && splitTag.property == "AUDIO") {
@@ -165,7 +173,16 @@ import { storyContent } from "./firstDraft.js";
 
       // Create paragraph element (initially hidden)
       var paragraphElement = document.createElement("p");
-      paragraphElement.innerHTML = paragraphText;
+      
+      // If this line has a sender tag, format as a message bubble
+      if (isSenderMessage) {
+        paragraphElement.classList.add("message-bubble");
+        paragraphElement.classList.add(currentSender === "You" ? "message-you" : "message-other");
+        paragraphElement.innerHTML = paragraphText;
+      } else {
+        paragraphElement.innerHTML = paragraphText;
+      }
+      
       storyContainer.appendChild(paragraphElement);
 
       // Add any custom classes derived from ink tags
