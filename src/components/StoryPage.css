@@ -1,30 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700");
 
+
 :root {
-  background-image: radial-gradient(
-    circle,
-    #b68af0,
-    #9e9cfb,
-    #8aabff,
-    #7eb8fe,
-    #7cc3f9,
-    #86c6f9,
-    #8fc8f9,
-    #97cbf9,
-    #a6c7fd,
-    #b9c1fd,
-    #cdbbf8,
-    #e0b5f0
-  );
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #f5f7fa;
+  /* High-contrast, light neutral background for accessibility */
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   display: flex;
   flex-direction: column;
+  background-color: #f5f7fa;
+  color: #222;
 }
 
 p {
