@@ -1,7 +1,7 @@
 import { storyContent } from "./firstDraft.js";
 !(async function (storyContent) {
   // Create ink story from the content using inkjs
-  // var story = new inkjs.Story(storyContent); // inkjs not defined, comment out to prevent error
+  var story = new inkjs.Story(storyContent);
 
   var savePoint = "";
 
@@ -62,7 +62,6 @@ import { storyContent } from "./firstDraft.js";
     ProgressBar.title = "Progress Bar";
     ProgressBarContainer.appendChild(ProgressBar);
 
-    var paragraphIndex = 0;
     var delay = 0.0;
 
     // Don't over-scroll past new content
@@ -169,8 +168,8 @@ import { storyContent } from "./firstDraft.js";
       storyContainer.appendChild(paragraphElement);
 
       // Add any custom classes derived from ink tags
-      for (var i = 0; i < customClasses.length; i++)
-        paragraphElement.classList.add(customClasses[i]);
+      for (var j = 0; j < customClasses.length; j++)
+        paragraphElement.classList.add(customClasses[j]);
 
       // Fade in paragraph after a short delay
       showAfter(delay, paragraphElement);
@@ -209,8 +208,8 @@ import { storyContent } from "./firstDraft.js";
       var choiceParagraphElement = document.createElement("p");
       choiceParagraphElement.classList.add("choice");
 
-      for (var i = 0; i < customClasses.length; i++)
-        choiceParagraphElement.classList.add(customClasses[i]);
+      for (var k = 0; k < customClasses.length; k++)
+        choiceParagraphElement.classList.add(customClasses[k]);
 
       if (isClickable) {
         choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`;
@@ -376,7 +375,7 @@ import { storyContent } from "./firstDraft.js";
         story.state.LoadJson(savedState);
         return true;
       }
-    } catch (e) {
+    } catch {
       console.debug("Couldn't load save state");
     }
     return false;
@@ -407,7 +406,7 @@ import { storyContent } from "./firstDraft.js";
   function setupButtons(hasSave) {
     let rewindEl = document.getElementById("rewind");
     if (rewindEl)
-      rewindEl.addEventListener("click", function (event) {
+      rewindEl.addEventListener("click", function () {
         removeAll("p");
         removeAll("img");
         setVisible(".header", false);
@@ -416,7 +415,7 @@ import { storyContent } from "./firstDraft.js";
 
     let saveEl = document.getElementById("save");
     if (saveEl)
-      saveEl.addEventListener("click", function (event) {
+      saveEl.addEventListener("click", function () {
         try {
           window.localStorage.setItem("save-state", savePoint);
           document.getElementById("reload").removeAttribute("disabled");
@@ -424,7 +423,7 @@ import { storyContent } from "./firstDraft.js";
           //   "theme",
           //   document.body.classList.contains("dark") ? "dark" : ""
           // );
-        } catch (e) {
+        } catch {
           console.warn("Couldn't save state");
         }
       });
@@ -433,7 +432,7 @@ import { storyContent } from "./firstDraft.js";
     if (!hasSave) {
       reloadEl.setAttribute("disabled", "disabled");
     }
-    reloadEl.addEventListener("click", function (event) {
+    reloadEl.addEventListener("click", function () {
       if (reloadEl.getAttribute("disabled")) return;
 
       removeAll("p");
@@ -441,7 +440,7 @@ import { storyContent } from "./firstDraft.js";
       try {
         let savedState = window.localStorage.getItem("save-state");
         if (savedState) story.state.LoadJson(savedState);
-      } catch (e) {
+      } catch {
         console.debug("Couldn't load save state");
       }
       continueStory(true);
