@@ -1145,55 +1145,93 @@ export default function Story() {
             p: 0,
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'flex-end',
+            justifyContent: 'flex-start',
             position: 'relative',
             border: `10px solid ${t.phoneBorder}`,
             overflow: 'hidden',
           }}>
             {/* Phone notch */}
-            <Box sx={{ width: 80, height: 12, bgcolor: '#222', borderRadius: 6, position: 'absolute', top: 12, left: '50%', transform: 'translateX(-50%)', zIndex: 2 }} />
+            <Box sx={{ width: 80, height: 12, bgcolor: '#222', borderRadius: 6, position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', zIndex: 3 }} />
+            
+            {/* Minimal Status Bar */}
+            <Box sx={{
+              width: '100%',
+              height: 14,
+              bgcolor: '#000',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              px: 1.6,
+              py: 0.4,
+              zIndex: 2,
+            }}>
+              <Typography sx={{ color: '#fff', fontSize: '0.45rem', fontWeight: 600, ml: 0.6 }}>{getTime()}</Typography>
+              <Box sx={{ display: 'flex', gap: 0.6, alignItems: 'center', mr: 3.75 }}>
+                {/* Signal bars */}
+                <Box sx={{ display: 'flex', gap: '0.5px', alignItems: 'flex-end', height: '5px' }}>
+                  <Box sx={{ width: '1px', height: '2px', bgcolor: '#fff' }} />
+                  <Box sx={{ width: '1px', height: '3px', bgcolor: '#fff' }} />
+                  <Box sx={{ width: '1px', height: '4px', bgcolor: '#fff' }} />
+                  <Box sx={{ width: '1px', height: '5px', bgcolor: '#fff' }} />
+                </Box>
+                
+                {/* WiFi symbol */}
+                <Box sx={{ width: '5px', height: '5px', position: 'relative' }}>
+                  <Box sx={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: '1px', height: '1px', bgcolor: '#fff', borderRadius: '50%' }} />
+                  <Box sx={{ position: 'absolute', bottom: '1px', left: '50%', transform: 'translateX(-50%)', width: '3px', height: '3px', border: '0.5px solid #fff', borderRadius: '50%', borderTop: 'none', borderLeft: 'none' }} />
+                </Box>
+                
+                {/* Message/SMS icon */}
+                <Box sx={{ width: '5px', height: '4px', border: '0.5px solid #fff', borderRadius: '0.5px', position: 'relative' }}>
+                  <Box sx={{ position: 'absolute', top: '0.5px', left: '0', right: '0', height: '0.5px', bgcolor: '#fff' }} />
+                </Box>
+              </Box>
+            </Box>
+            
             {/* Contact header */}
             <Box sx={{
               width: '100%',
-              height: 54,
+              height: 46,
               bgcolor: '#f5f7fa',
               borderBottom: '1px solid #e0e0e0',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               position: 'relative',
+              py: 0.6,
               zIndex: 1,
             }}>
               <Box sx={{
-                width: 36,
-                height: 36,
+                width: 32,
+                height: 32,
                 bgcolor: '#b3c6e0',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontWeight: 700,
-                fontSize: 18,
+                fontSize: 14,
                 color: '#222',
-                mr: 1.5,
+                mr: 1,
               }}>
                 L
               </Box>
-              <Typography variant="subtitle1" sx={{ color: '#222', fontWeight: 700, fontSize: 16 }}>
+              <Typography variant="subtitle2" sx={{ color: '#222', fontWeight: 600, fontSize: 13 }}>
                 Lilly (Lazlo's Sister)
               </Typography>
             </Box>
             {/* Chat bubbles */}
             <Box sx={{
-              mt: 1.5,
-              mb: 1.5,
               flex: 1,
+              mb: 0,
+              mt: 0,
               overflowY: 'auto',
               display: 'flex',
               flexDirection: 'column',
-              gap: 1.5,
-              px: 1.2,
-              pb: 2.5,
+              gap: 0.8,
+              px: 1,
+              pb: 0.5,
+              pt: 0.8,
               boxSizing: 'border-box',
               width: '100%',
               maxWidth: '100%',
@@ -1223,22 +1261,22 @@ export default function Story() {
                         : '#f1f0f0',
                       color: sender === "You" ? '#fff' : '#222',
                       borderRadius: '12px',
-                      p: 1.1,
-                      px: 2,
+                      p: 0.8,
+                      px: 1.2,
                       maxWidth: '78%',
-                      fontSize: '0.98rem',
+                      fontSize: '0.85rem',
                       boxShadow: 1,
                       mb: 0.5,
                       wordBreak: 'break-word',
                       fontFamily: 'Arial, sans-serif',
                     }}
                   >
-                    <div style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+                    <div style={{ fontSize: '0.85rem', lineHeight: '1.4' }}>
                       {String(text)}
                     </div>
                     <div style={{ 
-                      fontSize: '0.75rem', 
-                      marginTop: '4px',
+                      fontSize: '0.65rem', 
+                      marginTop: '2px',
                       color: sender === "You" ? '#cbe2ff' : '#888'
                     }}>
                       <time dateTime={time}>{time || 'No time'}</time>
@@ -1251,9 +1289,9 @@ export default function Story() {
                   sx={{
                     alignSelf: 'flex-start',
                     display: 'flex',
-                    gap: 0.5,
-                    p: 1.5,
-                    px: 2,
+                    gap: 0.3,
+                    p: 0.8,
+                    px: 1,
                   }}
                   role="status"
                   aria-live="polite"
@@ -1261,8 +1299,8 @@ export default function Story() {
                 >
                   <Box
                     sx={{
-                      width: 8,
-                      height: 8,
+                      width: 6,
+                      height: 6,
                       bgcolor: '#999',
                       borderRadius: '50%',
                       animation: 'bounce 1.4s infinite',
@@ -1273,15 +1311,15 @@ export default function Story() {
                         },
                         '40%': {
                           opacity: 1,
-                          transform: 'translateY(-8px)',
+                          transform: 'translateY(-6px)',
                         },
                       },
                     }}
                   />
                   <Box
                     sx={{
-                      width: 8,
-                      height: 8,
+                      width: 6,
+                      height: 6,
                       bgcolor: '#999',
                       borderRadius: '50%',
                       animation: 'bounce 1.4s infinite',
@@ -1293,15 +1331,15 @@ export default function Story() {
                         },
                         '40%': {
                           opacity: 1,
-                          transform: 'translateY(-8px)',
+                          transform: 'translateY(-6px)',
                         },
                       },
                     }}
                   />
                   <Box
                     sx={{
-                      width: 8,
-                      height: 8,
+                      width: 6,
+                      height: 6,
                       bgcolor: '#999',
                       borderRadius: '50%',
                       animation: 'bounce 1.4s infinite',
@@ -1313,7 +1351,7 @@ export default function Story() {
                         },
                         '40%': {
                           opacity: 1,
-                          transform: 'translateY(-8px)',
+                          transform: 'translateY(-6px)',
                         },
                       },
                     }}
@@ -1323,10 +1361,10 @@ export default function Story() {
               <div ref={chatEndRef} />
             </Box>
             {/* Typing indicator and input */}
-            <Box sx={{ mt: 2, px: 1.2, pb: 1.5 }}>
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <input style={{ flex: 1, borderRadius: 16, border: '1px solid #ccc', padding: '8px 12px', fontSize: '1rem' }} placeholder="Message..." />
-                <Button variant="contained" sx={{ borderRadius: 16, minWidth: 48 }}>Send</Button>
+            <Box sx={{ px: 1, py: 1 }}>
+              <Box sx={{ display: 'flex', gap: 0.5 }}>
+                <input style={{ flex: 1, borderRadius: 16, border: '1px solid #ccc', padding: '6px 10px', fontSize: '0.9rem' }} placeholder="Message..." />
+                <Button variant="contained" sx={{ borderRadius: 16, minWidth: 42, fontSize: '0.75rem', py: 0.75 }}>Send</Button>
               </Box>
             </Box>
           </Box>
