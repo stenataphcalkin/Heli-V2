@@ -70,22 +70,22 @@ const storyFlow = {
     choices: [
       {
         text: "Oh no, what's going on?",
-        response: "He's been so angry and withdrawn since Uncle Joey died. He won't talk to any of us, everything is an argument. But it's worse than that - he's become cruel, saying hurtful things that aren't like him at all. You are the only person I can think of that knows Lazlo well enough to get through to him.",
+        response: "He's been so withdrawn since Uncle Joey passed. He barely comes out of his room, and when he does he just... snaps. Says things that feel really harsh. It's like I don't even recognize him anymore. I'm scared, and I don't know who else to ask.",
         nextStep: "positive_path"
       },
       {
-        text: "We haven't spoke for a while, are you sure I am the right person to speak to?",
-        response: "I know I am asking a lot. I would not ask if I was not scared. He has been withdrawn, snapping at everyone, and shutting down. He's even said some really judgmental, almost cruel things to Mom and Dad - that's not who he is. Family is not getting through, but he used to listen to you. I need someone outside of us to try.",
+        text: "We haven't spoken in ages, though. Why me?",
+        response: "Because he actually respects you. You're not his parent, you're not preaching at him. When you two used to talk about stuff, he actually listened. Family's been trying but he just shuts us down. Maybe hearing from someone outside all this could help?",
         nextStep: "subtle_delay"
       },
       {
-        text: "I'm really swamped right now, maybe give it a few days and see if he settles down?",
-        response: "I know I'm asking a lot, but I do not think this will pass on its own. He's been shutting down, skipping meals, and snapping at everyone. Yesterday he said something really hostile to our dad that made him cry. Lazlo has never been like this. Family is not getting through. He needs someone outside of us to notice and reach him.",
+        text: "I'm swamped at work, maybe he just needs time to process?",
+        response: "I thought so too at first. But it's been weeks now and he's getting worse, not better. He's not eating, sleeping weird hours... and the things he's said to us are so mean. I keep telling myself it's just grief, but something feels different. Wrong.",
         nextStep: "subtle_delay"
       },
       {
-        text: "What if I say the wrong thing and make it worse?",
-        response: "I've worried about that too. But I think doing nothing is worse than trying and not being perfect. At least he'll know someone cares enough to reach out.",
+        text: "What if I mess this up and make it worse?",
+        response: "Then at least you tried. That matters. Right now he feels alone, even with people around him. Knowing someone cares enough to reach out... that alone could change things.",
         nextStep: "address_doubt_about_harm"
       }
     ]
@@ -93,23 +93,23 @@ const storyFlow = {
   positive_path: {
     choices: [
       {
-        text: "I'll go visit him in person.",
-        response: "Thank you. He's at our parents' place. I really hope you can get through to him.",
+        text: "I'll visit him in person",
+        response: "Thank you. He's at my parents' house. I really hope he'll actually talk to you.",
         nextStep: "positive_outcome"
       },
       {
-        text: "I'll try calling or texting first.",
-        response: "That's a good start. He might be more open to talking that way.",
+        text: "Let me try calling or texting him first",
+        response: "That works. He might be less defensive over text anyway.",
         nextStep: "positive_outcome"
       },
       {
-        text: "Wait, I'm nervous - what if he doesn't want to talk to me?",
-        response: "That's okay. Even if he doesn't open up right away, just knowing you reached out will matter. You don't have to fix everything, just show you care.",
+        text: "What if he just pushes me away?",
+        response: "Then at least he knows you tried. Just showing up matters - you don't have to solve everything. He needs to know someone's still watching.",
         nextStep: "reassurance_path"
       },
       {
-        text: "I'm not trained for this - should we call a professional instead?",
-        response: "Professionals are important, but so are friends. You're not replacing therapy - you're being a supportive friend who notices when something's wrong. That's incredibly valuable.",
+        text: "Shouldn't a professional handle this?",
+        response: "Eventually, yes. But friends matter too. You're not replacing therapy - you're just being someone who gives a damn. That has real value.",
         nextStep: "understand_role"
       }
     ]
@@ -117,18 +117,18 @@ const storyFlow = {
   subtle_delay: {
     choices: [
       {
-        text: "Tell me more about what you've noticed - I want to understand better",
-        response: "Thank you for asking. He has been quieter, sleeping more, and skipping meals. He also stopped hanging out with friends. But what really scares me is how he's changed - he's become judgmental and says cruel things to us. That's completely unlike him. I am not sure what is normal grief anymore and what might be something more serious.",
+        text: "What's been bothering him most?",
+        response: "He's lost interest in everything. He won't see his friends anymore. And the way he talks... it's like he's angry at the world. He made this comment about how nobody actually cares about each other, and I realized - he might believe that about us too.",
         nextStep: "explore_warning_signs"
       },
       {
-        text: "Check in with Lilly a few days later",
-        response: "Hey. Thanks for checking in. Things haven't really changed... actually they might be worse. He barely leaves his room now.",
+        text: "I'll wait a bit longer and see if he reaches out",
+        response: "He won't. I've been waiting for him to come around and it just... isn't happening. If anything, he's getting quieter. I don't know how much longer I can watch this without doing something.",
         nextStep: "delayed_response_consequences"
       },
       {
-        text: "I should reach out to him now, this sounds serious",
-        response: "Really? Thank you so much. I think hearing from you could really help. He's always valued your friendship.",
+        text: "Okay, I'll reach out tomorrow",
+        response: "Really? Oh God, thank you. I know he might not open up right away, but at least... at least someone will have tried, you know? It means a lot.",
         nextStep: "positive_path"
       }
     ]
@@ -136,23 +136,23 @@ const storyFlow = {
   assess_duration: {
     choices: [
       {
-        text: "Three weeks of declining behavior is a significant pattern",
-        response: "That's what I was thinking too. It's not just a bad day or even a bad week. This is becoming who he is, and that scares me.",
+        text: "This has been going on for weeks now",
+        response: "Yeah... and it feels like every day he gets a little worse. I keep hoping I'm overreacting, but I'm not, am I? This is actually really bad.",
         nextStep: "recognize_pattern_action"
       },
       {
-        text: "Maybe give it another week to see if he improves?",
-        response: "I'm worried that waiting longer will just make things harder. Every day he seems a little more distant. What if we lose him completely?",
+        text: "Maybe I should wait a bit longer?",
+        response: "I don't think that's... I'm sorry, I can't wait anymore. Every day he seems further away. I'm terrified if we don't do something now, we'll lose him.",
         nextStep: "consequence_of_waiting"
       },
       {
-        text: "But don't people just need time to grieve?",
-        response: "Yes, grief takes time. But there's a difference between grieving and completely shutting down. When someone stops eating, sleeping, and seeing friends for weeks - that's beyond normal grief.",
+        text: "He's probably just grieving - that takes time",
+        response: "I get that. But he's not just sad, you know? It's like he's... shutting down. The eating, the sleeping all weird hours, the way he talks... I've never seen grief look like this before.",
         nextStep: "grief_education"
       },
       {
-        text: "What if we're invading his privacy?",
-        response: "I've thought about that. But when someone you care about is suffering, checking in isn't invading privacy - it's showing you care. We're not snooping, we're reaching out.",
+        text: "I don't want to pry into his business",
+        response: "I get it. But this isn't about control - this is about keeping him safe. Sometimes caring about someone means checking in even if they push back.",
         nextStep: "privacy_vs_care"
       }
     ]
@@ -160,33 +160,33 @@ const storyFlow = {
   recognize_communication_changes: {
     choices: [
       {
-        text: "Not talking and avoiding eye contact are concerning signs",
-        response: "Exactly! He used to be so open with us. This complete shutdown is what's really frightening me. And when he does talk, he's become so harsh and judgmental. I think he needs help.",
+        text: "He's stopped talking to people",
+        response: "Exactly. He used to call me about stupid stuff all the time. Now? Nothing. And when I try to reach him, I get one-word answers or just silence. It's like he's shutting us out.",
         nextStep: "positive_path"
       },
       {
-        text: "What about his daily routine - eating, sleeping?",
-        response: "His sleep is all messed up - he's either sleeping all day or I hear him up all night. And meals... he says he's not hungry but I found food hidden in his room that he didn't eat.",
+        text: "How are his sleep and eating?",
+        response: "That's the thing that really worries me. He's up at weird hours - I hear him in his room at 3 AM. And he barely eats. When I bring food to his room, he leaves it. I'm worried he's wasting away.",
         nextStep: "physical_warning_signs"
       },
       {
-        text: "Can you tell me more about how his personality has changed?",
-        response: "He's become someone I don't recognize. He used to be empathetic and kind, but now he's critical of everything we do. He makes cutting remarks that feel designed to hurt. It's like he's pushing us all away on purpose.",
+        text: "What do you mean he's become cruel?",
+        response: "He's not the kid I grew up with. He's cutting, judgmental about everything. He said something to our dad that was just... designed to hurt. I've never heard him like this. Maybe it's just anger because of the grief, but it feels personal somehow.",
         nextStep: "personality_change_discussion"
       },
       {
-        text: "He's probably just being a moody teenager",
-        response: "I really don't think so. I've known him his whole life. Moody is one thing - but cruel and hostile is another. The things he's said lately... they're designed to hurt. This feels... dangerous. But maybe I'm wrong?",
+        text: "Teenagers can be moody though",
+        response: "He's not just moody. Moody is complaining about chores. This is... it's darker than that. The things he says feel designed to hurt us. And the way he looks at people - like he's disgusted with them. With us.",
         nextStep: "dismissive_response_consequence"
       },
       {
-        text: "I'm worried I'll just make him feel worse about himself",
-        response: "I understand that fear. But isolation makes people feel worse. Reaching out says 'you matter to me' - that can be really powerful when someone feels invisible.",
+        text: "Maybe he just needs space from everyone right now",
+        response: "Space doesn't help when someone's spiraling. Isolation just makes you feel more buried. He needs to know someone's still there, even if he's pushing everyone away.",
         nextStep: "impact_of_reaching_out"
       },
       {
-        text: "What if he gets angry at me for interfering?",
-        response: "He might be defensive at first - that's actually pretty common. But underneath that, he'll know someone cares. Sometimes people push away when they need help most.",
+        text: "What if he tells me to back off?",
+        response: "He probably will. But that doesn't mean he doesn't need this. Sometimes people push the hardest when they need help the most. At least he'll know you didn't give up on him.",
         nextStep: "handling_pushback"
       }
     ]
@@ -194,23 +194,23 @@ const storyFlow = {
   physical_warning_signs: {
     choices: [
       {
-        text: "Changes in sleep and appetite are serious warning signs",
-        response: "That's what I was afraid of. So this isn't just grief - this could be something more serious like depression?",
+        text: "The sleep and appetite changes worry me",
+        response: "Right? I keep thinking maybe it's just the grief, but three weeks? And only getting worse? I'm terrified this means something deeper is wrong.",
         nextStep: "educational_moment"
       },
       {
-        text: "These symptoms together suggest he needs support now",
-        response: "Thank you for helping me see this clearly. I've been so worried but didn't know if I was overreacting. Let's reach out to him.",
+        text: "He definitely needs help - not just time",
+        response: "That's what I needed to hear. I've been so scared I was pushing him, but you're right. Waiting isn't going to fix this.",
         nextStep: "positive_path"
       },
       {
-        text: "I don't know... aren't we supposed to respect when people want space?",
-        response: "There's a difference between wanting alone time and isolating to the point of harm. When someone can't eat or sleep normally for weeks, that's not healthy space - that's suffering.",
+        text: "But maybe he just needs time to process?",
+        response: "Time helps when you're healing. But this isn't healing - he's disappearing. There's a difference between grief and... whatever this is.",
         nextStep: "space_vs_isolation"
       },
       {
-        text: "What if I'm not equipped to handle his response?",
-        response: "You don't need to have all the answers. Just listening and showing you care is powerful. If he needs more help, you can support him in finding it. You're not alone in this.",
+        text: "I don't know how to actually help him though",
+        response: "You don't have to fix it alone. Just letting him know you see him and you care - that matters more than you think. And if he needs real help, you can find that together.",
         nextStep: "support_role_clarity"
       }
     ]
@@ -218,28 +218,28 @@ const storyFlow = {
   explore_warning_signs: {
     choices: [
       {
-        text: "How long has this been going on?",
-        response: "About three weeks now. At first I thought it was just normal grief, but it keeps getting worse. He's isolating himself more every day.",
+        text: "How long has he been like this?",
+        response: "Three weeks. Maybe longer? At first I thought it was just grief, but it's only gotten worse. Every day he withdraws a little more.",
         nextStep: "assess_duration"
       },
       {
-        text: "Has he said anything about how he's feeling?",
-        response: "That's the thing - he won't talk about it. He just says 'I'm fine' but everything about him says he's not. He won't even look us in the eye anymore.",
+        text: "Has he talked about how he's feeling?",
+        response: "That's the worst part - he won't. Just keeps saying 'I'm fine' while everything else screams that he's not. He can't even make eye contact anymore.",
         nextStep: "recognize_communication_changes"
       },
       {
-        text: "You mentioned he's been saying cruel things? That's concerning.",
-        response: "Yes... that's what really worries me. He told Mom she was suffocating him and said Dad doesn't understand anything. These aren't just teenager complaints - they were mean, bordering on hostile. Lazlo used to be so kind.",
+        text: "You said he's been cruel to your family?",
+        response: "Yeah. He told Mom she was suffocating. Told Dad he doesn't understand anything. It wasn't teenage attitude - it was calculated to hurt. That's not who he is. Or... wasn't.",
         nextStep: "personality_change_discussion"
       },
       {
-        text: "These sound like warning signs - we should act now",
-        response: "You really think so? I was worried I might be overreacting... Thank you for taking this seriously.",
+        text: "This feels serious - I think we should reach out",
+        response: "Really? You don't think I'm overreacting? God, thank you for saying that. I needed someone to take this seriously.",
         nextStep: "positive_path"
       },
       {
-        text: "I'm honestly not sure I'd know what to look for...",
-        response: "That's okay - I can tell you what I've noticed. Changes in sleep, appetite, withdrawing from friends, loss of interest in things he used to love. Multiple changes together are what worry me.",
+        text: "I'm not sure how to read all of this",
+        response: "I just know it's not one thing. It's everything changing at once - sleep, food, friends, the way he talks. It's the whole picture that scares me.",
         nextStep: "learn_warning_signs"
       }
     ]
@@ -247,13 +247,13 @@ const storyFlow = {
   recognize_pattern_action: {
     choices: [
       {
-        text: "Let's reach out to him together - what's your plan?",
-        response: "I think if you could text him, just to check in? He might respond better to you than to family right now.",
+        text: "Let's reach out together - what do you need from me?",
+        response: "Maybe you could text him? Just check in? He might actually respond to you since you're not family. He might not feel as defensive.",
         nextStep: "positive_path"
       },
       {
-        text: "What other warning signs should we be looking for?",
-        response: "I've read that giving away possessions, talking about being a burden, or sudden mood changes can be serious. I haven't seen those yet, but the isolation and withdrawal worry me.",
+        text: "Are there other things I should pay attention to?",
+        response: "Sometimes people start giving things away or say they feel like a burden. I haven't seen that yet. But the isolation mixed with everything else? That's already more than enough to worry me.",
         nextStep: "educational_moment"
       }
     ]
@@ -261,7 +261,7 @@ const storyFlow = {
   educational_moment: {
     choices: [
       {
-        text: "These signs together suggest we need to act now",
+        text: "Taken together, this feels like we should act now",
         response: "You're right. I feel better knowing you understand why I'm so worried. Let's reach out to him.",
         nextStep: "positive_path"
       },
@@ -275,23 +275,23 @@ const storyFlow = {
   personality_change_discussion: {
     choices: [
       {
-        text: "Sudden personality changes like hostility are a major red flag",
-        response: "That's what I thought. He's always been gentle and thoughtful. Seeing him lash out and say cruel things... it's like he's not himself. This isn't just grief, is it?",
+        text: "That's a massive personality shift - something's really wrong",
+        response: "That's what I've been thinking. He's never been like this. It's like he hates us or hates himself. I can't tell which is scarier.",
         nextStep: "understand_personality_changes"
       },
       {
-        text: "What kind of things has he been saying?",
-        response: "He told Mom she was pathetic for crying over Uncle Joey. He said Dad was weak for showing emotion. These are things Lazlo would never say normally. It's like he's trying to hurt the people who love him most.",
+        text: "Can you give me examples?",
+        response: "Yesterday he told my mom she was being pathetic for crying. He said my dad was weak. But the worst part? He said it calmly, like he meant every word. Like he wanted to hurt them.",
         nextStep: "hostile_behavior_details"
       },
       {
-        text: "Maybe he's just angry about the loss?",
-        response: "Anger is normal in grief, but this feels different. It's not just anger - it's directed cruelty. He seems to know exactly what will hurt most and says it anyway. That's what scares me.",
+        text: "Angry grief doesn't make people that cruel though",
+        response: "You're right. Anger and grief made him moody, sure. But this calculated cruelty? Knowing exactly what will shatter someone? That's different. That scares me.",
         nextStep: "distinguish_anger_from_hostility"
       },
       {
-        text: "This sounds really serious - we should reach out now",
-        response: "Yes, I think so too. When someone changes this dramatically, it's a cry for help even if they're pushing people away.",
+        text: "He's in real distress - you should reach out",
+        response: "I think you're right. I was worried I'd make it worse, but... I think he's worse because nobody's reaching out. I need to try.",
         nextStep: "positive_path"
       }
     ]
@@ -299,13 +299,13 @@ const storyFlow = {
   understand_personality_changes: {
     choices: [
       {
-        text: "No, dramatic personality changes suggest serious distress",
-        response: "I was afraid of that. So the isolation, the physical symptoms, and now this cruelty - they're all connected?",
+        text: "Grief doesn't cause this much cruelty on its own",
+        response: "So he's not just grieving? That helps me understand why I felt so panicked. Something else is happening with him.",
         nextStep: "connect_symptoms"
       },
       {
-        text: "We need to act fast before he hurts himself or damages these relationships permanently",
-        response: "You're right. Even if he's in pain, the damage he's doing to our family... we need to help him before he can't take it back.",
+        text: "If he keeps going like this, he'll damage everything",
+        response: "I know. And that's the terrifying part - I think he knows too. But he can't seem to stop. I need to help him before he destroys himself.",
         nextStep: "positive_path"
       }
     ]
@@ -313,13 +313,13 @@ const storyFlow = {
   hostile_behavior_details: {
     choices: [
       {
-        text: "That level of cruelty isn't normal - even in grief",
-        response: "Thank you for validating that. I keep second-guessing myself, wondering if I'm overreacting, but this really isn't like him.",
+        text: "Grief is one thing - intentional cruelty is something else",
+        response: "I'm so glad you understand. Everyone keeps saying 'give him time, he's grieving' but this doesn't feel like grief. This feels urgent.",
         nextStep: "positive_path"
       },
       {
-        text: "It sounds like he's pushing people away deliberately",
-        response: "Yes! That's exactly what it feels like. Like he's testing how much we'll take before we give up on him. Which makes me even more worried about what's going on in his head.",
+        text: "It sounds like he's deliberately driving people away",
+        response: "Yes. Which is what terrifies me. If he pushes everyone away, who's going to be there when he really needs someone?",
         nextStep: "understand_pushing_away"
       }
     ]
@@ -327,13 +327,13 @@ const storyFlow = {
   distinguish_anger_from_hostility: {
     choices: [
       {
-        text: "You're right - there's a difference between grief anger and calculated cruelty",
-        response: "Exactly. Grief makes you lash out sometimes, but this feels intentional. Like he wants us to hate him. That can't be healthy.",
+        text: "This is actually grief expressing itself as anger - common reaction",
+        response: "So he's acting out to protect himself? I never thought of it that way. He's hurt and he doesn't know how to handle it.",
         nextStep: "positive_path"
       },
       {
-        text: "Why would someone deliberately try to hurt people who love them?",
-        response: "Sometimes when people are in pain, they push others away because they feel unworthy of love, or they're trying to protect people from their darkness. But it makes them more isolated and can be dangerous.",
+        text: "People hurt others when they're hurting themselves",
+        response: "Oh God. So he's not being cruel because he's a bad person - he's being cruel because he's in pain? That makes it worse somehow. I need to reach out to him.",
         nextStep: "psychology_of_pushing_away"
       }
     ]
@@ -341,8 +341,8 @@ const storyFlow = {
   connect_symptoms: {
     choices: [
       {
-        text: "Yes - they're all signs of someone in serious distress",
-        response: "That makes sense. So it's not separate issues - it's all one big cry for help that we need to answer.",
+        text: "Yes - it's all pointing to the same bigger problem",
+        response: "That makes sense. So it's not separate issues - it's all one big signal that he needs help.",
         nextStep: "positive_path"
       },
       {
@@ -383,13 +383,13 @@ const storyFlow = {
   consequence_of_waiting: {
     choices: [
       {
-        text: "You're right - every day matters. Let's act now.",
-        response: "Thank you for listening. I knew reaching out to you was the right choice. Let's help Lazlo.",
+        text: "You're right - time is important here",
+        response: "Thank you for understanding. I knew coming to you would help me find clarity. Let's do this.",
         nextStep: "positive_path"
       },
       {
-        text: "But what if we're just being dramatic?",
-        response: "I'd rather be dramatic and wrong than casual and regret it. When it comes to someone's wellbeing, isn't it better to care too much than too little?",
+        text: "What if we wait a bit longer?",
+        response: "I want to believe that, but the feeling in my gut... I can't shake it. Every day he seems to get worse, and I'm scared if we wait too long, it'll be too late.",
         nextStep: "reflection_on_action"
       }
     ]
@@ -402,13 +402,13 @@ const storyFlow = {
         nextStep: "physical_warning_signs"
       },
       {
-        text: "I think you know him best - trust your instincts",
-        response: "You're right. My gut has been screaming that something is wrong. I should trust that. Will you help me reach out to him?",
+        text: "Actually, I think you know him better than anyone",
+        response: "Right? And my gut has been screaming for weeks. I'm tired of second-guessing myself. I need to listen to what I'm seeing.",
         nextStep: "positive_path"
       },
       {
-        text: "Let's check back in a week and see if he improves",
-        response: "Okay... I hope you're right and I'm just worrying too much. I'll reach out next week...",
+        text: "Maybe he'll snap out of it on his own",
+        response: "I hope so... I really do. But I have this feeling that if I don't do something, this is going to get a lot worse. I guess I'll just have to wait and see.",
         nextStep: "delayed_response_consequences"
       }
     ]
@@ -430,13 +430,13 @@ const storyFlow = {
   delayed_response_consequences: {
     choices: [
       {
-        text: "Check back a week later",
-        response: "Hey... things have gotten worse. Lazlo stopped going to school this week. His teacher called home. I should have pushed harder when you first said to wait.",
+        text: "Check in on Lazlo a week later",
+        response: "Lilly: He's... he's not going to school. His teacher called yesterday. I kept waiting and hoping he'd get better on his own, but now it's worse. I should have listened to my instincts sooner.",
         nextStep: "learn_from_delay"
       },
       {
-        text: "Actually, I changed my mind - let's reach out now",
-        response: "Really? Oh thank god. I've been so anxious about this. I really think we need to act sooner rather than later.",
+        text: "Actually, let's reach out to him right now",
+        response: "Really? Thank God. I've been so scared – I was just looking for permission to do what I already knew I needed to do. Let's help him.",
         nextStep: "explore_warning_signs"
       }
     ]
@@ -444,13 +444,13 @@ const storyFlow = {
   late_intervention_path: {
     choices: [
       {
-        text: "Reach out to Lazlo now, even though time has passed",
-        response: "He responded... He said he's been feeling invisible, like no one cares. It's going to take more work now, but at least he's talking. Early intervention would have been easier.",
+        text: "Reach out to Lazlo now, even if we waited too long",
+        response: "He finally opened up... He said he felt invisible. Like nobody was watching, nobody cared. We could have reached him sooner, but at least he knows we're here now.",
         nextStep: "story_end_lesson"
       },
       {
-        text: "Ask what specific signs we should have caught earlier",
-        response: "The isolation, the sleep and eating changes, the withdrawal from friends, and especially the personality changes - the hostility and cruel comments. These together for weeks were the red flags. One sign might be nothing, but multiple signs persisting? That's when you act.",
+        text: "What should we have paid attention to?",
+        response: "Everything you saw: the pulling away, the changes in how he takes care of himself, the new cruelty, the way he talks about himself. You were picking up real signals. The big clue is when multiple things change at once - not just one bad day, but a pattern.",
         nextStep: "educational_reflection"
       }
     ]
@@ -458,13 +458,13 @@ const storyFlow = {
   educational_reflection: {
     choices: [
       {
-        text: "I understand now. Let's help him moving forward.",
-        response: "Yes. And now you know: trust your instincts when you see changes, ask questions, and don't wait for things to get worse before acting.",
+        text: "So I need to trust what I'm seeing and act",
+        response: "Yes. Next time - and there might be someone in your life this will matter for - don't wait for perfect certainty. If multiple changes are there and they're not getting better, reach out. You don't have to be right, you just have to care.",
         nextStep: "story_end_lesson"
       },
       {
-        text: "Can we try again with this knowledge?",
-        response: "Let's imagine I'm reaching out to you for the first time again. This time you know what to look for...",
+        text: "Let me start over with what I know now",
+        response: "Good idea. Imagine I'm reaching out to you again for the first time, but now you understand the pattern. What would you do differently?",
         nextStep: "subtle_delay"
       }
     ]
@@ -473,7 +473,7 @@ const storyFlow = {
     choices: [
       {
         text: "What made the difference in reaching out early?",
-        response: "You took the warning signs seriously, you asked questions instead of dismissing concerns, and you acted quickly. That's what helped Lazlo feel seen and supported when he needed it most.",
+        response: "You took what you were seeing seriously, you asked questions instead of dismissing concerns, and you acted quickly. That's what helped Lazlo feel seen and supported when he needed it most.",
         nextStep: "story_end_good"
       }
     ]
@@ -481,18 +481,18 @@ const storyFlow = {
   address_doubt_about_harm: {
     choices: [
       {
-        text: "You're right - showing care is better than staying silent",
-        response: "Exactly. You don't have to be perfect. Just being there matters more than saying the perfect thing.",
+        text: "But what if I make things worse by bringing it up?",
+        response: "You won't. Silence makes things worse - it makes people feel more alone. Even if he pushes back at first, knowing you care is powerful.",
         nextStep: "positive_path"
       },
       {
-        text: "But what's the right thing to say?",
-        response: "Keep it simple: 'I've noticed you seem different lately. I care about you and I'm here if you want to talk.' You don't need a script - just sincerity.",
+        text: "What do I even say to him?",
+        response: "Something real. Like: 'Hey, I've noticed you seem really down lately. Even if you're not ready to talk, I want you to know I'm here.' You don't need perfect words - you need sincerity.",
         nextStep: "communication_guidance"
       },
       {
-        text: "I'm still really nervous about this...",
-        response: "That's totally normal. Caring about doing it right shows you take this seriously. Would it help to talk through what you might say?",
+        text: "I'm nervous I'll mess this up",
+        response: "That's actually a good sign - it means you care. The fact that you want to get it right shows him you're taking this seriously. That matters.",
         nextStep: "practice_conversation"
       }
     ]
@@ -500,13 +500,13 @@ const storyFlow = {
   reassurance_path: {
     choices: [
       {
-        text: "Okay, I'll reach out even if I'm nervous",
-        response: "That's brave. Being nervous means you care. Lazlo will appreciate that you reached out despite feeling unsure.",
+        text: "I'm going to reach out despite being scared",
+        response: "That's exactly what courage looks like. Being scared and doing it anyway. Lazlo needs that right now.",
         nextStep: "positive_outcome"
       },
       {
-        text: "What if the conversation goes badly?",
-        response: "Even awkward conversations about mental health are better than no conversation. You're planting a seed - he'll remember that you tried, even if he's not ready to talk yet.",
+        text: "What if he pushes me away?",
+        response: "He probably will, at least at first. But that doesn't mean it didn't matter that you tried. Sometimes people need to hear it multiple times before they believe anyone actually cares.",
         nextStep: "conversation_expectations"
       }
     ]
@@ -514,13 +514,13 @@ const storyFlow = {
   understand_role: {
     choices: [
       {
-        text: "So I'm just checking in as a friend, not trying to fix everything?",
-        response: "Exactly! You're showing up, listening, and letting him know he's not alone. If he needs professional help, you can encourage that too. Friends are part of the support network.",
+        text: "So I'm not supposed to solve everything?",
+        response: "Not at all. You're just being there. If he needs real help, you encourage him to get it - therapy, doctors, whatever. But being heard by someone who cares? That's huge.",
         nextStep: "positive_outcome"
       },
       {
-        text: "That makes sense. I can do that.",
-        response: "I think so too. Sometimes just knowing someone notices and cares makes all the difference.",
+        text: "I can do that - just be there and listen",
+        response: "You can. And honestly? That might be enough to change everything for him. It's not nothing.",
         nextStep: "positive_outcome"
       }
     ]
@@ -528,13 +528,13 @@ const storyFlow = {
   learn_warning_signs: {
     choices: [
       {
-        text: "So multiple changes persisting over time is the key?",
-        response: "Yes! One bad day is normal. But several symptoms lasting weeks - that's a pattern. Isolation + sleep changes + appetite changes + withdrawal from activities + hostile personality changes = time to act.",
+        text: "So it's the pattern that matters, not one thing",
+        response: "Exactly. Anyone can have a bad day with sleep or appetite. But when everything changes together for weeks? That's worth paying attention to.",
         nextStep: "positive_path"
       },
       {
-        text: "This is helpful - I want to understand better",
-        response: "I'm glad. Other signs can include giving away possessions, talking about being a burden, sudden mood changes, or becoming cruel and judgmental. But what I'm seeing now is already concerning enough.",
+        text: "What else should I pay attention to in the future?",
+        response: "In Lazlo's case, the hostility mixed with withdrawal is really telling. Sometimes people also give things away, talk about being a burden, or get stuck in negative thinking. But what matters is understanding their whole picture.",
         nextStep: "educational_moment"
       }
     ]
@@ -542,13 +542,13 @@ const storyFlow = {
   grief_education: {
     choices: [
       {
-        text: "I see the difference now. Let's reach out.",
-        response: "Thank you. Grief is painful but people still function. This level of shutdown is different - it needs attention.",
+        text: "It's starting to make sense. He needs help, not time",
+        response: "Right. Time helps, but not when someone is actively getting worse. That's when you need to step in.",
         nextStep: "positive_path"
       },
       {
-        text: "How do you know when grief becomes something more serious?",
-        response: "When it stops someone from basic functioning - eating, sleeping, connecting with others. When it lasts for weeks without any improvement. That's when normal grief might have become depression or crisis.",
+        text: "When does grief stop being normal?",
+        response: "When someone can't do basic things - eat, sleep, get out of bed. When they want to hurt themselves or others. That's when grief has become a crisis and needs real intervention.",
         nextStep: "recognize_pattern_action"
       }
     ]
@@ -556,13 +556,13 @@ const storyFlow = {
   privacy_vs_care: {
     choices: [
       {
-        text: "You're right - care matters more than privacy here",
-        response: "Exactly. We're not reading his diary, we're just asking if he's okay. That's what friends do.",
+        text: "Asking if someone's okay isn't an invasion",
+        response: "That's right. Caring isn't the same as prying. You're allowed to notice when someone you care about is hurting.",
         nextStep: "positive_path"
       },
       {
-        text: "I guess I'm just worried about overstepping",
-        response: "I understand. But consider this: would you rather overstep and find out he's fine, or respect privacy and find out too late that he wasn't?",
+        text: "I'm worried I'll embarrass him by bringing it up",
+        response: "Maybe for a moment. But which is worse - brief embarrassment, or spiraling alone wondering if anybody cares? I know which I'd choose if I was drowning.",
         nextStep: "consequence_of_waiting"
       }
     ]
@@ -570,13 +570,13 @@ const storyFlow = {
   impact_of_reaching_out: {
     choices: [
       {
-        text: "That's a good point. Isolation is worse than awkwardness.",
-        response: "Yes! Even if he doesn't open up immediately, he'll know he's not forgotten. That matters more than you might think.",
+        text: "Even awkward is better than alone",
+        response: "Exactly. And sometimes the awkward conversation is the one that saves someone. He needs to hear that he hasn't been forgotten.",
         nextStep: "positive_path"
       },
       {
-        text: "What should I actually say to him?",
-        response: "Something like: 'Hey, I've been thinking about you. You seem different lately and I'm worried. I'm here if you want to talk.' Simple and honest.",
+        text: "How do I start that conversation?",
+        response: "Keep it simple. 'Hey, I've been thinking about you. You've seemed really down lately and I'm worried. I'm here if you want to talk.' That's it. Don't overthink.",
         nextStep: "communication_guidance"
       }
     ]
@@ -584,13 +584,13 @@ const storyFlow = {
   handling_pushback: {
     choices: [
       {
-        text: "So even if he's defensive, I shouldn't give up?",
-        response: "Right. You might hear 'I'm fine' or 'leave me alone.' But you can say 'Okay, but I'm here if you change your mind.' Then check in again later. Persistence shows you really care.",
+        text: "Even if he tells me to go away, I should still try?",
+        response: "Yes. You can say 'Alright, but I'm here if you change your mind.' Don't disappear just because he said to the first time. Persistence matters.",
         nextStep: "positive_path"
       },
       {
-        text: "That sounds hard. I'm not sure I can handle rejection.",
-        response: "It is hard. But remember - it's not about you. If he pushes back, it's his pain speaking, not his real feelings about you. Can you be brave for him?",
+        text: "What if he gets angry and takes it out on me?",
+        response: "He might. And it'll hurt. But his anger isn't really about you - it's about his pain. Can you hold space for that? For him?",
         nextStep: "courage_to_act"
       }
     ]
@@ -598,13 +598,13 @@ const storyFlow = {
   space_vs_isolation: {
     choices: [
       {
-        text: "I understand now - this isn't healthy space",
-        response: "Exactly. Healthy space is temporary and chosen. This is prolonged isolation that's hurting him. Let's help.",
+        text: "This is isolation, not healthy coping",
+        response: "Yes. And isolation kills people slowly. He needs to know someone is still reaching, even if he's not ready to reach back yet.",
         nextStep: "positive_path"
       },
       {
-        text: "How do I know the difference?",
-        response: "Healthy space: person still functions, returns to normal activities. Isolation: withdrawing from everything and everyone, declining health, lasting weeks. See the difference?",
+        text: "How can I tell if someone needs space or intervention?",
+        response: "If they're still taking care of themselves and connecting with a few people, they're coping. If everything shuts down at once - eating, sleep, friendships, self-care - that's not space. That's a real shift.",
         nextStep: "educational_moment"
       }
     ]
@@ -612,12 +612,12 @@ const storyFlow = {
   support_role_clarity: {
     choices: [
       {
-        text: "Okay, I can do that - just be there and listen",
-        response: "Yes! And if he needs more help, you can suggest talking to a counselor or therapist together. You're part of his support team, not the whole team.",
+        text: "I don't have to fix everything - just show up",
+        response: "Exactly. Listen. Be there. If he needs professional help, you support him in finding it. But showing up matters - it's not nothing.",
         nextStep: "positive_outcome"
       },
       {
-        text: "That takes the pressure off. I'll reach out.",
+        text: "That helps. I can be there without having all the answers",
         response: "Good. You don't have to fix him - just show up. That's enough.",
         nextStep: "positive_outcome"
       }
@@ -626,13 +626,13 @@ const storyFlow = {
   communication_guidance: {
     choices: [
       {
-        text: "That's simple and clear. I can do that.",
-        response: "Perfect. Authenticity matters more than perfection. He'll feel your genuine concern.",
+        text: "I can say that. Simple is better anyway",
+        response: "Much better. Authenticity beats rehearsed every time. He needs real, not perfect.",
         nextStep: "positive_outcome"
       },
       {
-        text: "What if he says he's fine but I don't believe him?",
-        response: "You can say 'I hear you, but I've noticed [specific changes]. I care about you and want to make sure you're really okay.' Specific observations are hard to dismiss.",
+        text: "What if he says 'I'm fine' but I know he's not?",
+        response: "Then you say something like 'I've noticed you're up at 3 AM and not eating. That's not fine.' Be specific about what you've seen. Hard to argue with reality.",
         nextStep: "positive_outcome"
       }
     ]
@@ -640,13 +640,13 @@ const storyFlow = {
   conversation_expectations: {
     choices: [
       {
-        text: "So even an imperfect attempt is worthwhile",
-        response: "Absolutely. The attempt itself communicates caring. Perfect isn't the goal - showing up is.",
+        text: "Even a messy attempt matters",
+        response: "More than you know. People remember who showed up, not who said the perfect thing.",
         nextStep: "positive_outcome"
       },
       {
-        text: "That makes me feel better. I'll try.",
-        response: "That's all anyone can ask. Your willingness to be uncomfortable for someone else's wellbeing? That's true friendship.",
+        text: "Okay. I'm going to reach out now",
+        response: "Good. Being willing to feel uncomfortable for someone else's sake - that's what love looks like.",
         nextStep: "positive_outcome"
       }
     ]
@@ -654,13 +654,13 @@ const storyFlow = {
   courage_to_act: {
     choices: [
       {
-        text: "Yes, I can be brave for him. I'll reach out.",
-        response: "That's the spirit. Your courage could save his life. Let's do this.",
+        text: "Yes. I'll reach out today",
+        response: "Good. That's the bravery he needs from you right now. Let's help him.",
         nextStep: "positive_outcome"
       },
       {
-        text: "I need more time to prepare myself",
-        response: "I understand it's scary. But the longer we wait, the harder it gets for him. Could you reach out today, even if you're not totally ready?",
+        text: "I need a day to think about how to say this",
+        response: "I get it - this is hard. But every day that passes, he's alone with his thoughts a little longer. Can you push through the fear and reach out today?",
         nextStep: "reflection_on_action"
       }
     ]
@@ -668,13 +668,13 @@ const storyFlow = {
   practice_conversation: {
     choices: [
       {
-        text: "Yes, let's practice what I might say",
-        response: "Great. Start with 'I've noticed you haven't been yourself lately' then ask 'How are you really doing?' Keep it open-ended so he can share what he needs to.",
+        text: "Let me practice what I'll say",
+        response: "Sure. Start with 'You haven't seemed like yourself lately' then ask 'What's going on with you?' Keep it open so he has space to answer honestly.",
         nextStep: "communication_guidance"
       },
       {
-        text: "Actually, I think I'm ready to just reach out",
-        response: "That's great! Trust yourself. You care about him - that will come through.",
+        text: "Actually, I'm ready. Let's do this",
+        response: "Perfect. You care about him - that'll come through in whatever you say.",
         nextStep: "positive_outcome"
       }
     ]
@@ -682,13 +682,13 @@ const storyFlow = {
   signs_overlooked: {
     choices: [
       {
-        text: "Check back with Lilly a week later",
-        response: "Hey... I don't know how to say this. Lazlo hasn't been to school all week. I found out he told his counselor he doesn't see the point. I should have looked closer when you called. I wish I'd pushed harder.",
+        text: "Wait a week and check in again",
+        response: "He stopped going to school. His guidance counselor called. He told her he doesn't see the point anymore. I waited too long. I wish I'd listened to you the first time.",
         nextStep: "late_realization"
       },
       {
-        text: "Actually, wait - I should check in now, not later",
-        response: "Really? Thank you. I was just about to reach out again. I'm still really worried about him.",
+        text: "Actually, I should check in sooner",
+        response: "Oh thank God. I was about to call you again - I can't stop thinking about him. I'm really scared.",
         nextStep: "subtle_delay"
       }
     ]
@@ -696,13 +696,13 @@ const storyFlow = {
   late_realization: {
     choices: [
       {
-        text: "Reach out to Lazlo now",
-        response: "He is surprised to hear from you, but he's willing to talk. It helps, but it's harder now. The signs were there earlier.",
+        text: "Reach out to Lazlo despite the delay",
+        response: "He's... willing to talk. He said he's been feeling invisible. Like he could disappear and nobody would notice until it was too late. We can help him now, but it would have been easier if we'd moved faster.",
         nextStep: "story_end_lesson"
       },
       {
-        text: "Think about what you could have done differently",
-        response: "Looking back, I wish I had asked more questions when you first reached out. Maybe if I understood better... Can we talk through what happened?",
+        text: "What could I have seen earlier?",
+        response: "All the changes were there from the start: isolation, physical symptoms, cruelty, personality change. I wish I'd understood what they meant together. Can we go back and look at this again?",
         nextStep: "reflection_loop"
       }
     ]
@@ -710,13 +710,13 @@ const storyFlow = {
   reflection_loop: {
     choices: [
       {
-        text: "Go back and approach this differently",
-        response: "Hey, it's Lilly again. I know we talked before, but I'm still really worried about Lazlo. Are you sure there's nothing you can do?",
+        text: "Let me try this again from the beginning",
+        response: "Okay. Imagine I'm reaching out for the first time again. Now you know what the pattern means.",
         nextStep: "subtle_delay"
       },
       {
-        text: "Accept the outcome and finish",
-        response: "I guess we just have to deal with where we are now. I learned that waiting has consequences.",
+        text: "I understand the lesson. Move forward",
+        response: "Yeah. Waiting cost us time we can't get back. At least now I know: when you see the pattern, you act. You don't wait for it to get worse.",
         nextStep: "story_end_lesson"
       }
     ]
@@ -724,8 +724,8 @@ const storyFlow = {
   positive_outcome: {
     choices: [
       {
-        text: "See the difference your action made",
-        response: "Because you reached out when you did, Lazlo felt like someone cared. He opened up earlier. Your timing made it easier for him to get support.",
+        text: "How did early action help Lazlo?",
+        response: "He said later that knowing someone noticed - that someone cared enough to reach out when things got dark - that was what gave him hope. Your timing mattered. Moving fast meant he didn't have to suffer alone as long.",
         nextStep: "story_end_good"
       }
     ]
@@ -733,8 +733,8 @@ const storyFlow = {
   story_end_good: {
     choices: [
       {
-        text: "What were the key lessons here?",
-        response: "✓ You recognized warning signs early\n✓ You asked questions to understand better\n✓ You took action quickly\n✓ Early intervention makes all the difference\n\nLazlo got the help he needed because someone noticed and cared enough to act.",
+        text: "What made the difference here?",
+        response: "You saw the changes. You asked real questions. You acted quickly instead of waiting. Those three things together - that's how you help someone who's drowning.\n\nLazlo got help early because you didn't ignore what you were seeing.",
         nextStep: "final_restart"
       }
     ]
@@ -742,8 +742,8 @@ const storyFlow = {
   story_end_lesson: {
     choices: [
       {
-        text: "What could I have done differently?",
-        response: "Key lessons:\n⚠ Multiple warning signs together need immediate attention\n⚠ Waiting to see if things improve can make situations worse\n⚠ It's better to check in and be wrong than not check in at all\n⚠ Trust your instincts when someone you care about changes\n\nYou helped eventually, but early action is always better.",
+        text: "What should I have done differently?",
+        response: "The changes were all there: isolation, physical changes, cruelty, personality shift. When multiple things shift together, you act - you don't wait to see if it gets worse.\n\nYou helped eventually. But sooner is always better than later.",
         nextStep: "final_restart"
       }
     ]
@@ -751,13 +751,13 @@ const storyFlow = {
   final_restart: {
     choices: [
       {
-        text: "Try Again from Beginning",
+        text: "Start Over",
         response: "",
         nextStep: "start"
       },
       {
-        text: "Practice recognizing warning signs again",
-        response: "Good idea. Let's go through the scenario again, and this time you'll know what to look for from the start.",
+        text: "Try the scenario again with what I learned",
+        response: "Okay. Let's go through it again. This time you'll recognize the pattern earlier.",
         nextStep: "subtle_delay"
       }
     ]
@@ -1168,21 +1168,21 @@ export default function Story() {
               <Typography sx={{ color: '#fff', fontSize: '0.45rem', fontWeight: 600, ml: 0.6 }}>{getTime()}</Typography>
               <Box sx={{ display: 'flex', gap: 0.6, alignItems: 'center', mr: 3.75 }}>
                 {/* Signal bars */}
-                <Box sx={{ display: 'flex', gap: '0.5px', alignItems: 'flex-end', height: '5px' }}>
-                  <Box sx={{ width: '1px', height: '2px', bgcolor: '#fff' }} />
-                  <Box sx={{ width: '1px', height: '3px', bgcolor: '#fff' }} />
-                  <Box sx={{ width: '1px', height: '4px', bgcolor: '#fff' }} />
-                  <Box sx={{ width: '1px', height: '5px', bgcolor: '#fff' }} />
+                <Box sx={{ display: 'flex', gap: '0.5px', alignItems: 'flex-end', height: '7px' }}>
+                  <Box sx={{ width: '3px', height: '4px', bgcolor: '#fff' }} />
+                  <Box sx={{ width: '3px', height: '5px', bgcolor: '#fff' }} />
+                  <Box sx={{ width: '3px', height: '6px', bgcolor: '#fff' }} />
+                  <Box sx={{ width: '3px', height: '7px', bgcolor: '#fff' }} />
                 </Box>
                 
                 {/* WiFi symbol */}
-                <Box sx={{ width: '5px', height: '5px', position: 'relative' }}>
-                  <Box sx={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: '1px', height: '1px', bgcolor: '#fff', borderRadius: '50%' }} />
-                  <Box sx={{ position: 'absolute', bottom: '1px', left: '50%', transform: 'translateX(-50%)', width: '3px', height: '3px', border: '0.5px solid #fff', borderRadius: '50%', borderTop: 'none', borderLeft: 'none' }} />
+                <Box sx={{ width: '7px', height: '7px', position: 'relative' }}>
+                  <Box sx={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: '2px', height: '2px', bgcolor: '#fff', borderRadius: '50%' }} />
+                  <Box sx={{ position: 'absolute', bottom: '1px', left: '50%', transform: 'translateX(-50%)', width: '5px', height: '5px', border: '0.5px solid #fff', borderRadius: '50%', borderTop: 'none', borderLeft: 'none' }} />
                 </Box>
                 
                 {/* Message/SMS icon */}
-                <Box sx={{ width: '5px', height: '4px', border: '0.5px solid #fff', borderRadius: '0.5px', position: 'relative' }}>
+                <Box sx={{ width: '7px', height: '6px', border: '0.5px solid #fff', borderRadius: '0.5px', position: 'relative' }}>
                   <Box sx={{ position: 'absolute', top: '0.5px', left: '0', right: '0', height: '0.5px', bgcolor: '#fff' }} />
                 </Box>
               </Box>
